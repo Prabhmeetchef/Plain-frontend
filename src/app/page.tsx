@@ -3,6 +3,7 @@ import { redirect } from "next/navigation"
 import { button } from "framer-motion/client"
 import Image from "next/image"
 import Link from "next/link"
+import { ArrowUpRight } from "lucide-react"
 
 export default async function Home() {
   const session = await getServerSession()
@@ -23,7 +24,7 @@ export default async function Home() {
           ></Image>
         </Link>
         <Link href={"auth/login"} className="inline-flex">
-        <button className="text-white bg-gradient-to-t from-[#AB00D6] to-[#D322FF] rounded-[12px] py-2 px-6 text-2xl font-semibold">Login</button>
+        <button className="text-white bg-gradient-to-t from-[#AB00D6] to-[#D322FF] rounded-[12px] py-2 px-6 text-2xl font-semibold flex items-center">Login<ArrowUpRight/></button>
         </Link>
       </header>
       <section className="flex justify-center w-[100vw] h-[90vh] translate-y-20">
