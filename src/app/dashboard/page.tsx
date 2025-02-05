@@ -1,9 +1,13 @@
-import { redirect } from "next/navigation";
+import { getServerSession, NextAuthOptions } from "next-auth";
+import LogoutButton from '@/app/components/LogoutButton';
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 export default async function Dashboard() {
-  return(
-    <div>
-        Hello
-    </div>
-  )
+  const session = await getServerSession(authOptions as NextAuthOptions);
+  if (!session) {
+    return <p>Please log in</p>;
+  }
+  return <div className="w-[100vw] h-[100vh] flex-col justify-center items-center flex">
+    <div className="text-2xl font-semibold">Welcome, {session.user?.name}!</div>  <div className="text-xl m-2"><LogoutButton /></div>
+    </div>;
 }
