@@ -18,7 +18,7 @@ export default async function Home() {
         <Link href={"/"} className="inline-flex left-2">
           <Image
             alt="Logo"
-            src="/logo.png"
+            src="/Logo.png"
             height={80}
             width={100}
           ></Image>

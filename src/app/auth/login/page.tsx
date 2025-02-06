@@ -71,7 +71,7 @@ export default function Login() {
                 <button onClick={handleGoogleSignIn}
               disabled={loading} className="rounded-[8px] p-2 px-6 text-black text-[24px] font-semibold mb-12 border-gray-200 border-[2px] inline-flex items-center justify-center">
                 {loading ? 'Connecting...' : 'Connect with Google'}
-                <Image src="/google.svg" alt="Google" width={32} height={32} className="pl-2"></Image>
+                <Image src="/Google.svg" alt="Google" width={32} height={32} className="pl-2"></Image>
                 </button>
                 <div className="text-center"><h1 className="text-[20px] font-semibold">New here? <span className="text-blue-600 underline"><Link href="signup"><button className="underline">Signup</button></Link></span></h1></div>
             </form>
