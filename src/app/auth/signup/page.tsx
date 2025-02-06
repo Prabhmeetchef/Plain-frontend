@@ -119,7 +119,7 @@ export default function SignupPage() {
             >
               {loading ? "Connecting..." : "Connect with Google"}
               <Image
-                src="/google.svg"
+                src="/Google.svg"
                 alt="Google"
                 width={32}
                 height={32}
