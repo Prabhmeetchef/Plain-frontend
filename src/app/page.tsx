@@ -13,8 +13,8 @@ export default async function Home() {
   }
 
   return (
-    <div className="flex justify-center w-[100vw] h-[100vh]">
-      <header className="flex bg-white w-[98vw] justify-between fixed h-20 items-center">
+    <div className="flex flex-col justify-center w-[100vw] h-[100vh] items-center">
+      <header className="flex bg-white w-[98vw] justify-between h-20 items-center z-1000">
         <Link href={"/"} className="inline-flex left-2">
           <Image
             alt="Logo"
@@ -27,11 +27,11 @@ export default async function Home() {
         <button className="text-white bg-gradient-to-t from-[#AB00D6] to-[#D322FF] rounded-[12px] py-2 px-6 text-2xl font-semibold flex items-center">Login<ArrowUpRight/></button>
         </Link>
       </header>
-      <section className="flex justify-center w-[100vw] h-[90vh] translate-y-20">
+      <section className="flex justify-center w-[100vw] h-[90vh]">
         <div className=" h-full w-[98%] bg-gradient-to-t from-[#7A0099] to-[#D322FF] rounded-[12px] flex justify-center items-center shadow-inner">
-          <div className="text-center -translate-y-20">
+          <div className="text-center ">
           <h1 className="text-white text-[120px] font-bold block">Ease Design.</h1>
-          <h2 className="text-white text-[42px] font-light -translate-y-6">Build, manage, and scale your design language effortlessly.</h2>
+          <h2 className="text-white text-[42px] font-light ">Build, manage, and scale your design language effortlessly.</h2>
           <Link href={"auth/signup"}><button className="bg-white text-2xl font-bold px-6 p-2 rounded-[12px] my-6">Get Started</button></Link>
           <div>
           </div>
