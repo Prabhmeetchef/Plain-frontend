@@ -41,7 +41,7 @@ export default function Login() {
   return (
     <>
       <div className="flex justify-center w-[100vw] h-[100vh]">
-        <div className="w-[50vw] flex flex-col items-center h-[100vh]">
+        <div className="sm:w-[50vw] flex flex-col items-center h-[100vh] w-[80vw]">
           <Link href='/'><Image src="/Logo.png" alt="Logo" width={120} height={80} className="pt-[70px]"></Image></Link>
           <h1 className="text-black text-[40px] font-bold block pt-12">
             Welcome back!
@@ -49,7 +49,7 @@ export default function Login() {
           <h2 className="text-[#949494] text-[26px] font-semibold block">
             Please enter your details to login.
           </h2>
-            <form className="flex flex-col w-[29vw] pt-12" onSubmit={handleSubmit}>
+            <form className="flex min-w-[320px] flex-col w-[29vw] pt-12" onSubmit={handleSubmit}>
                 <input
                 type="email"
                 placeholder="Please enter your email"
@@ -73,10 +73,10 @@ export default function Login() {
                 {loading ? 'Connecting...' : 'Connect with Google'}
                 <Image src="/Google.svg" alt="Google" width={32} height={32} className="pl-2"></Image>
                 </button>
-                <div className="text-center"><h1 className="text-[20px] font-semibold">New here? <span className="text-blue-600 underline"><Link href="signup"><button className="underline">Signup</button></Link></span></h1></div>
+                <div className="text-center mb-10"><h1 className="text-[20px] font-semibold">New here? <span className="text-blue-600 underline"><Link href="signup"><button className="underline">Signup</button></Link></span></h1></div>
             </form>
         </div>
-        <div className="flex flex-col justify-between w-[50vw] h-[full] bg-gradient-to-t from-[#AB00D6] to-[#D322FF]">
+        <div className="sm:flex flex-col justify-between w-[50vw] h-[full] bg-gradient-to-t from-[#AB00D6] to-[#D322FF] hidden">
           <div className="text-white text-[42px] font-bold w-full p-8 text-center">
             Ease Design.
           </div>
@@ -86,6 +86,7 @@ export default function Login() {
               alt="Logo"
               width={1000}
               height={600}
+              className="max-w-[600px]"
             ></Image>
           </div>
         </div>

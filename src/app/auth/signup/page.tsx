@@ -67,7 +67,7 @@ export default function SignupPage() {
   return (
     <>
       <div className="flex justify-center w-[100vw] h-[100vh]">
-        <div className="w-[50vw] flex flex-col items-center h-[100vh]">
+        <div className="sm:w-[50vw] flex flex-col items-center h-[100vh] w-[80vw]">
           <Link href="/">
             <Image
               src="/Logo.png"
@@ -84,7 +84,7 @@ export default function SignupPage() {
             Please enter your details to Signup.
           </h2>
           <form
-            className="flex flex-col w-[29vw] pt-12"
+            className="flex flex-col sm:w-[29vw] pt-12 w-[60vw]"
             onSubmit={handleSubmit}
           >
             <input
@@ -126,7 +126,7 @@ export default function SignupPage() {
                 className="pl-2"
               ></Image>
             </button>
-            <div className="text-center">
+            <div className="text-center mb-10">
               <h1 className="text-[20px] font-semibold">
                 New here?{" "}
                 <span className="text-blue-600 underline">
@@ -138,7 +138,7 @@ export default function SignupPage() {
             </div>
           </form>
         </div>
-        <div className="flex flex-col justify-between w-[50vw] h-[full] bg-gradient-to-t from-[#AB00D6] to-[#D322FF]">
+        <div className="sm:flex flex-col justify-between w-[50vw] h-[full] bg-gradient-to-t from-[#AB00D6] to-[#D322FF] hidden">
           <div className="text-white text-[42px] font-bold w-full p-8 text-center">
             Ease Design.
           </div>
@@ -148,6 +148,7 @@ export default function SignupPage() {
               alt="Logo"
               width={1000}
               height={600}
+              className="max-w-[600px]"
             ></Image>
           </div>
         </div>
