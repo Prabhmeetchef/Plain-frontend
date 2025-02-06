@@ -7,10 +7,10 @@ export async function POST(req: Request) {
   if (!email || !password || !name) {
     return new Response(JSON.stringify({ error: "Missing fields" }), { status: 400 });
   }
-
   const hashedPassword = await hash(password, 10);
-
-  const { data, error } = await supabase.from("users").insert([
+  const { 
+    // data
+    error } = await supabase.from("users").insert([
     { email, password: hashedPassword, name },
   ]);
 
