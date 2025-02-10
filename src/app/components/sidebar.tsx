@@ -16,7 +16,7 @@ export default async function Sidebar() {
     <div className="flex-col flex bg-[#f7f7f7] w-60 border-[#e6e6e6] border-[2px] rounded-[10px] h-[98vh] justify-between">
       <div>
         <div className="flex m-[12px]">
-          <Image src="/logo.png" alt="logo" width={100} height={45} />
+          <Image src="/Logo.png" alt="logo" width={100} height={45} />
         </div>
         <nav className="mt-6">
           <a
