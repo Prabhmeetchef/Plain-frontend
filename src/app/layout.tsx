@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Alumni_Sans, Roboto_Condensed} from "next/font/google";
+import { Alumni_Sans} from "next/font/google";
 import "./globals.css";
 
 const alumni_Sans = Alumni_Sans({ subsets: ['latin'] })

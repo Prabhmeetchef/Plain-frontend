@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Component, FileText, Settings, LogOut } from "lucide-react";
+import { Component, FileText, Settings, User } from "lucide-react";
 export default async function Sidebar() {
     const session = await getServerSession(authOptions as NextAuthOptions);
   return (
@@ -46,8 +46,8 @@ export default async function Sidebar() {
         className="bg-white flex text-white p-[12px] rounded-[10px] border-[#efafff] border-2 w-full items-center justify-between"
       >
         <div className="flex items-center">
-          <button className="rounded-full font-semibold text-[20px] p-2 bg-gradient-to-t from-[#AB00D6] to-[#D322FF] w-10 h-10 text-center ">
-            J
+          <button className="flex rounded-full font-semibold text-[20px] p-2 bg-gradient-to-t from-[#AB00D6] to-[#D322FF] w-10 h-10 items-center justify-center">
+            <User className="size-[20px] " />
           </button>
           {session && <p className="text-black ml-2 text-[20px] font-normal">{session.user?.name}</p>}
         </div>
