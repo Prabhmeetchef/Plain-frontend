@@ -1,5 +1,4 @@
 import { getServerSession, NextAuthOptions } from "next-auth";
-import LogoutButton from '@/app/components/LogoutButton';
 import { authOptions } from "@/lib/auth";
 import Sidebar from "../components/sidebar";
 

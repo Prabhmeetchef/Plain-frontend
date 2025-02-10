@@ -3,7 +3,6 @@ import { Alumni_Sans} from "next/font/google";
 import "./globals.css";
 
 const alumni_Sans = Alumni_Sans({ subsets: ['latin'] })
-
 export const metadata: Metadata = {
   title: "Plain",
   description: "App",
