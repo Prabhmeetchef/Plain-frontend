@@ -16,7 +16,7 @@ export default function Login() {
     const res = await signIn("credentials", { ...form, redirect: false });
 
     if (res?.ok) {
-      router.push("/dashboard");
+      router.push("/dashboard/components");
     } else {
       alert("Login failed");
     }
@@ -29,7 +29,7 @@ export default function Login() {
     
     try {
       await signIn("google", {
-        callbackUrl: "/dashboard",
+        callbackUrl: "/dashboard/components",
         redirect: true
       });
     } catch (error) {

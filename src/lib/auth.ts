@@ -121,7 +121,7 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/auth/login",
     signUp: "/auth/signup", // Keep the signUp property
-    callback: "/app/dashboard", // Fixed the callback URL (removed @)
+    callback: "/app/dashboard/components", // Fixed the callback URL (removed @)
     signOut: "/auth/signout",
     error: "/auth/error",
     verifyRequest: "/auth/verify-request",

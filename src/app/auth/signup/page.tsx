@@ -40,7 +40,7 @@ export default function SignupPage() {
       }
 
       // Step 3: Redirect to the dashboard
-      router.push("/dashboard"); // Redirect the user to the dashboard after successful sign-in
+      router.push("/dashboard/components"); // Redirect the user to the dashboard after successful sign-in
     } catch (error) {
       console.error("Error during signup/signin:", error); // Log the error for debugging
       alert("Signup or signin failed. Please try again."); // Show an error message to the user
@@ -55,7 +55,7 @@ export default function SignupPage() {
 
     try {
       await signIn("google", {
-        callbackUrl: "/dashboard",
+        callbackUrl: "/dashboard/components",
         redirect: true,
       });
     } catch (error) {
