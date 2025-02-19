@@ -1,10 +1,14 @@
 "use client";
+import { Alumni_Sans } from "next/font/google";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-
+const alumni = Alumni_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"], // Specify the weights you need
+});
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
@@ -40,7 +44,7 @@ export default function Login() {
 
   return (
     <>
-      <div className="flex justify-center w-[100vw] h-[100vh]">
+      <div className={`flex justify-center w-[100vw] h-[100vh] ${alumni.className}`}>
         <div className="sm:w-[50vw] flex flex-col items-center h-[100vh] w-[80vw]">
           <Link href='/'><Image src="/Logo.png" alt="Logo" width={120} height={80} className="pt-[70px]"></Image></Link>
           <h1 className="text-black text-[40px] font-bold block pt-12">

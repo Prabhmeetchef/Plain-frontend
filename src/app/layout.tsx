@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Alumni_Sans} from "next/font/google";
+import {Roboto_Condensed} from "next/font/google";
 import "./globals.css";
 
-const alumni_Sans = Alumni_Sans({ subsets: ['latin'] })
+const robotoCondensed = Roboto_Condensed({
+  subsets: ["latin"],
+  weight: ["400", "700"], // Specify the weights you need
+});
 export const metadata: Metadata = {
   title: "Plain",
   description: "App",
@@ -16,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={alumni_Sans.className}
+        className={robotoCondensed.className}
       >
         {children}
       </body>

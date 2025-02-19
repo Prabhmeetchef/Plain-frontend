@@ -1,10 +1,15 @@
 import { getServerSession } from "next-auth"
+import { Alumni_Sans} from "next/font/google";
 import { redirect } from "next/navigation"
 // import { button } from "framer-motion/client"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 
+const alumni = Alumni_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"], // Specify the weights you need
+});
 export default async function Home() {
   const session = await getServerSession()
   
@@ -13,7 +18,7 @@ export default async function Home() {
   }
 
   return (
-    <div className="flex flex-col justify-center w-[100vw] h-[100vh] items-center">
+    <div className={`flex flex-col justify-center w-[100vw] h-[100vh] items-center ${alumni.className}`}>
       <header className="flex bg-white w-[98vw] justify-between h-20 items-center z-1000">
         <Link href={"/"} className="inline-flex left-2">
           <Image
