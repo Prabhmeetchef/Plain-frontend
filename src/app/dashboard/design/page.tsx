@@ -2,7 +2,6 @@ import { getServerSession, NextAuthOptions } from "next-auth";
 import { Frame } from "lucide-react";
 import { authOptions } from "@/lib/auth";
 import Sidebar from "../../components/sidebar";
-import { User } from "lucide-react";
 import Link from "next/link";
 import { Archivo } from "next/font/google";
 const archivo = Archivo({
