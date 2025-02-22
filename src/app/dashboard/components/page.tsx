@@ -142,7 +142,7 @@ export default async function Components() {
   ];
 
   return (
-    <div className="w-[100vw] h-[100vh] flex justify-between items-center">
+    <div className="h-[100vh] flex justify-between items-center">
       <div className="ml-[1vw] fixed">
         <Sidebar username={username} />
       </div>
