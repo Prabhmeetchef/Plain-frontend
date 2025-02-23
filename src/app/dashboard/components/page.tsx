@@ -120,7 +120,7 @@ export default async function Components() {
       ),
     },
     {
-      type: "Input fields",
+      type: "Inputs",
       element: (
         <input
           placeholder="Enter email"
