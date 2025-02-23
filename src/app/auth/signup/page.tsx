@@ -62,7 +62,7 @@ export default function SignupPage() {
   };
 
   return (
-    <div className={`flex justify-center w-[100vw] h-[100vh] ${alumni.className}`}>
+    <div className={`flex justify-center w-full h-full ${alumni.className}`}>
       <div className="sm:w-[50vw] flex flex-col items-center h-[100vh] w-[80vw]">
         <Link href="/">
           <Image src="/Logo.png" alt="Logo" width={120} height={80} className="pt-[65px]" />
@@ -118,11 +118,16 @@ export default function SignupPage() {
           </div>
         </form>
       </div>
-      <div className="sm:flex flex-col justify-between w-[50vw] h-[full] bg-gradient-to-t from-[#AB00D6] to-[#D322FF] hidden">
+      <div className="sm:flex flex-col justify-between flex-grow bg-gradient-to-t from-[#AB00D6] to-[#D322FF] hidden">
         <div className="text-white text-[42px] font-bold w-full p-8 text-center">Ease Design.</div>
-        <div>
-          <Image src="/Group 1.svg" alt="Logo" width={1000} height={600} className="max-w-[600px]" />
-        </div>
+        <div className="relative w-[48vw] h-[50vh] overflow-hidden">
+                  <Image
+                    src="/Group 1.svg"
+                    alt="Logo"
+                    fill
+                    className="object-cover object-[left_top]"
+                  />
+                </div>
       </div>
     </div>
   );

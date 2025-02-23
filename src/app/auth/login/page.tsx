@@ -47,7 +47,7 @@ export default function Login() {
 
   return (
     <div
-      className={`flex justify-center w-[100vw] h-[100vh] ${alumni.className}`}
+      className={`flex justify-center w-full h-full ${alumni.className}`}
     >
       <div className="sm:w-[50vw] flex flex-col items-center h-[100vh] w-[80vw]">
         <Link href="/">
@@ -114,11 +114,11 @@ export default function Login() {
           </div>
         </form>
       </div>
-      <div className="sm:flex flex-col justify-between w-[50vw] h-[full] bg-gradient-to-t from-[#AB00D6] to-[#D322FF] hidden">
+      <div className="sm:flex flex-col justify-between flex-grow bg-gradient-to-t from-[#AB00D6] to-[#D322FF] hidden">
         <div className="text-white text-[42px] font-bold w-full p-8 text-center">
           Ease Design.
         </div>
-        <div className="relative w-[50vw] h-[50vh] overflow-hidden">
+        <div className="relative w-[48vw] h-[50vh] overflow-hidden">
           <Image
             src="/Group 1.svg"
             alt="Logo"
