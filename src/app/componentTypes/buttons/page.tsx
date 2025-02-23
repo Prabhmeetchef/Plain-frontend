@@ -11,18 +11,8 @@ import {
   DialogHeader,
   DialogTrigger,
 } from "@/components/ui/dialog";
+
 import { redirect } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 // Initialize Supabase client
 const supabase = createServerComponentClient({ cookies });
@@ -65,7 +55,7 @@ export default async function Buttons() {
     const title = formData.get("title") as string;
     const notes = formData.get("notes") as string;
 
-    let newButton: any;
+    let newButton;
 
     if (type === "html_css") {
       const html = formData.get("html") as string;
@@ -214,7 +204,8 @@ export default async function Buttons() {
                       <div id="image_fields" className="py-4">
                         <h1 className="opacity-60 text-[13px]">Image URL</h1>
                         <input
-                          type="text"
+                        required
+                          type="url"
                           name="imgurl"
                           className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1"
                         />
@@ -274,9 +265,11 @@ export default async function Buttons() {
               ) : (
                 <>
                   <div className="h-full flex w-full overflow-auto bg-[#e9e9e9] rounded-[6px] objects-center justify-center">
-                    <img
-                      src={button.imgurl}
+                    <Image
+                      src={button.imgurl || "/default-image.png"}
                       alt={button.title}
+                      width={200}
+                      height={200}
                       className="w-full h-auto rounded-[6px]"
                     />
                   </div>

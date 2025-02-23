@@ -22,13 +22,13 @@ export default function Sidebar({ username }: { username?: string }) {
         <div className="flex m-[12px]">
           <Image src="/Logo.png" alt="logo" width={100} height={56} />
         </div>
-        <nav className="mt-6">
+        <nav className="my-6">
           <a
             href="/dashboard/components"
             className={`flex items-center py-4 pl-[12px] nav-item ${
               pathname === "/dashboard/components"
                 ? "text-black opacity-100 font-semibold bg-white shadow-[0px_2px_2px_2px_#F9E7FD]"
-                : "text-black opacity-[60%]"
+                : "text-black opacity-[80%]"
             }`}
           >
             <Component className="size-[20px]" />
@@ -41,7 +41,7 @@ export default function Sidebar({ username }: { username?: string }) {
             className={`flex items-center py-4 pl-[12px] nav-item ${
               pathname === "/dashboard/design"
                 ? "text-black opacity-100 font-semibold bg-white shadow-[0px_2px_2px_2px_#F9E7FD]"
-                : "text-black opacity-[60%]"
+                : "text-black opacity-[80%]"
             }`}
           >
             <FileText className="size-[20px]" />
