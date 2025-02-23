@@ -199,14 +199,12 @@ export default async function Components() {
                         Cancel
                       </button>
                     </DialogClose>
-                    <DialogClose>
                       <button
                         type="submit"
                         className="py-2 px-[26px] text-white bg-[#AB00D6] rounded-[6px]"
                       >
                         Add
                       </button>
-                    </DialogClose>
                   </div>
                 </form>
               </DialogContent>
