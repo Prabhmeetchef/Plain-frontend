@@ -254,7 +254,7 @@ export default async function Buttons() {
             >
               {button.type === "html_css" ? (
                 <>
-                  <div className="flex-1 flex w-full overflow-auto bg-[#e9e9e9] rounded-[6px] objects-center justify-center">
+                  <div className="flex-1 flex w-full overflow-auto bg-[#e9e9e9] rounded-[6px] items-center justify-center">
                     <style>{button.css}</style>
                     <div
                       dangerouslySetInnerHTML={{ __html: button.html || "" }}
@@ -264,13 +264,13 @@ export default async function Buttons() {
                 </>
               ) : (
                 <>
-                  <div className="h-full flex w-full overflow-auto bg-[#e9e9e9] rounded-[6px] objects-center justify-center">
+                  <div className="flex w-full overflow-auto bg-[#e9e9e9] rounded-[6px] items-center justify-center h-full">
                     <Image
                       src={button.imgurl || "/default-image.png"}
                       alt={button.title}
                       width={200}
-                      height={200}
-                      className="w-full h-auto rounded-[6px]"
+                      height={100}
+                      className="max-h-[252px]"
                     />
                   </div>
                   <h1 className="text-lg">{button.title}</h1>
