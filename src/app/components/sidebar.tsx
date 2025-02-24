@@ -17,7 +17,7 @@ export default function Sidebar({ username }: { username?: string }) {
   const pathname = usePathname(); // ✅ Detects active page
 
   return (
-    <div className="flex-col flex bg-[#FEFBFF] w-60 border-[#F9E7FD] border-[2px] rounded-[10px] h-[98vh] justify-between">
+    <div className="flex-col sm:flex bg-[#FEFBFF] w-60 border-[#F9E7FD] border-[2px] rounded-[10px] h-[98vh] justify-between hidden">
       <div>
         <div className="flex m-[12px]">
           <Image src="/Logo.png" alt="logo" width={100} height={56} />

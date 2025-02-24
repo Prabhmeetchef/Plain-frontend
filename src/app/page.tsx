@@ -1,45 +1,46 @@
-import { getServerSession } from "next-auth"
-import { Alumni_Sans} from "next/font/google";
-import { redirect } from "next/navigation"
-// import { button } from "framer-motion/client"
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
+import { getServerSession } from "next-auth";
+import { Alumni_Sans } from "next/font/google";
+import { redirect } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 const alumni = Alumni_Sans({
   subsets: ["latin"],
-  weight: ["400", "700"], // Specify the weights you need
+  weight: ["400", "700"],
 });
+
 export default async function Home() {
-  const session = await getServerSession()
+  const session = await getServerSession();
   
   if (session) {
-    redirect("/dashboard/components")
+    redirect("/dashboard/components");
   }
 
   return (
-    <div className={`flex flex-col justify-center w-[100vw] h-[100vh] items-center ${alumni.className}`}>
-      <header className="flex bg-white w-[98vw] justify-between h-20 items-center z-1000">
-        <Link href={"/"} className="inline-flex left-2">
-          <Image
-            alt="Logo"
-            src="/Logo.png"
-            height={80}
-            width={100}
-          ></Image>
+    <div className={`flex flex-col justify-center w-screen h-screen items-center ${alumni.className}`}>
+      <header className="flex bg-white w-[98vw] justify-between h-20 items-center z-1000 px-4 md:px-8">
+        <Link href={"/"} className="inline-flex">
+          <Image alt="Logo" src="/Logo.png" height={60} width={80} className="md:h-20 md:w-[100px]" />
         </Link>
         <Link href={"auth/login"} className="inline-flex">
-        <button className="text-white bg-gradient-to-t from-[#AB00D6] to-[#D322FF] rounded-[12px] py-2 px-6 text-2xl font-semibold flex items-center">Login<ArrowUpRight/></button>
+          <button className="text-white bg-gradient-to-t from-[#AB00D6] to-[#D322FF] rounded-[12px] py-2 px-4 text-lg md:text-2xl font-semibold flex items-center">
+            Login <ArrowUpRight className="ml-1" />
+          </button>
         </Link>
       </header>
-      <section className="flex justify-center w-[100vw] h-[90vh]">
-        <div className=" h-full w-[98%] bg-gradient-to-t from-[#7A0099] to-[#D322FF] rounded-[12px] flex justify-center items-center shadow-inner">
-          <div className="text-center ">
-          <h1 className="text-white text-[120px] font-bold block">Ease Design.</h1>
-          <h2 className="text-white text-[42px] font-light ">Build, manage, and scale your design language effortlessly.</h2>
-          <Link href={"auth/signup"}><button className="bg-white text-2xl font-bold px-6 p-2 rounded-[12px] my-6">Get Started</button></Link>
-          <div>
-          </div>
+      <section className="flex justify-center w-full h-[90vh] px-4 md:px-0">
+        <div className="h-full w-full max-w-[98%] bg-gradient-to-t from-[#7A0099] to-[#D322FF] rounded-[12px] flex justify-center items-center shadow-inner p-4 md:p-8">
+          <div className="text-center">
+            <h1 className="text-white text-[47px] md:text-[120px] font-bold">Ease Design.</h1>
+            <h2 className="text-white text-lg md:text-[42px] font-light max-w-[90%] md:max-w-full mx-auto">
+              Build, manage, and scale your design language effortlessly.
+            </h2>
+            <Link href={"auth/signup"}>
+              <button className="bg-white text-lg md:text-2xl font-bold px-4 md:px-6 py-2 rounded-[12px] my-4 md:my-6">
+                Get Started
+              </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -18,9 +18,7 @@ import { redirect } from "next/navigation";
 // Initialize Supabase client
 const supabase = createServerComponentClient({ cookies });
 
-
 export default async function Components() {
-
   const session = await getServerSession(authOptions as NextAuthOptions);
   const username = session?.user?.name || "Guest";
   if (!session) {
@@ -143,20 +141,43 @@ export default async function Components() {
 
   return (
     <div className="h-[100vh] flex justify-between items-center">
+      <nav className="flex justify-between bg-white shadow-md fixed w-full top-0 left-0 z-50 sm:hidden">
+        <Image
+          src="/Logo.png"
+          alt="logo"
+          width={80}
+          height={20}
+          className="p-[11px]"
+        />
+        <div className="flex justify-end space-x-[20px] py-[15px] mx-[18px]">
+          <Link
+            href="/dashboard/design"
+            className="text-lg font-medium text-gray-700 hover:text-purple-600"
+          >
+            Design
+          </Link>
+          <Link
+            href="/dashboard/components"
+            className="text-lg font-medium text-gray-700 hover:text-purple-600"
+          >
+            Components
+          </Link>
+        </div>
+      </nav>
       <div className="ml-[1vw] fixed">
         <Sidebar username={username} />
       </div>
       <div>
-        <div className="w-[290px] h-[98vh]">.</div>
+        <div className="sm:flex w-[290px] h-[98vh] hidden">.</div>
       </div>
-      <div className="flex-grow flex-col h-full py-6">
+      <div className="flex-grow flex-col h-full sm:py-6 py-20 sm:mx-0 mx-10">
         <h1 className="text-[32px] font-semibold">Components</h1>
         <h2 className="opacity-60">
           All component types can be seen and created here.
         </h2>
 
         {/* Grid for displaying connected component types */}
-        <div className="flex flex-wrap gap-8 py-10">
+        <div className="flex flex-wrap gap-8 sm:py-10 py-0">
           {/* Add new component button */}
           <div className="flex items-center justify-center w-[270px] h-[270px]">
             <Dialog>
@@ -199,12 +220,12 @@ export default async function Components() {
                         Cancel
                       </button>
                     </DialogClose>
-                      <button
-                        type="submit"
-                        className="py-2 px-[26px] text-white bg-[#AB00D6] rounded-[6px]"
-                      >
-                        Add
-                      </button>
+                    <button
+                      type="submit"
+                      className="py-2 px-[26px] text-white bg-[#AB00D6] rounded-[6px]"
+                    >
+                      Add
+                    </button>
                   </div>
                 </form>
               </DialogContent>

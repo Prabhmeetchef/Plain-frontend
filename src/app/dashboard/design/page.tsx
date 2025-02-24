@@ -1,4 +1,5 @@
 import { getServerSession, NextAuthOptions } from "next-auth";
+import Image from "next/image";
 import { Frame } from "lucide-react";
 import { authOptions } from "@/lib/auth";
 import Sidebar from "../../components/sidebar";
@@ -59,13 +60,24 @@ export default async function Designguidelines() {
 
   return (
     <div className="h-[100vh] flex justify-between items-center">
+      <nav className="flex justify-between bg-white shadow-md fixed w-full top-0 left-0 z-50 sm:hidden">
+      <Image src="/Logo.png" alt="logo" width={80} height={20} className="p-[11px]"/>
+      <div className="flex justify-end space-x-[20px] py-[15px] mx-[18px]">
+        <Link href="/dashboard/design" className="text-lg font-medium text-gray-700 hover:text-purple-600">
+          Design
+        </Link>
+        <Link href="/dashboard/components" className="text-lg font-medium text-gray-700 hover:text-purple-600">
+          Components
+        </Link>
+      </div>
+    </nav>
       <div className="ml-[1vw] fixed">
         <Sidebar username={username} />
       </div>
       <div>
-        <div className="w-[290px] h-[98vh]">.</div>
+        <div className="sm:flex w-[290px] h-[98vh] hidden">.</div>
       </div>
-      <div className="flex-grow flex-col h-full py-6">
+      <div className="flex-grow flex-col h-full sm:py-6 py-20 sm:mx-0 mx-10">
         <h1 className="text-[32px] font-semibold">Design Guidelines</h1>
         <h2 className="opacity-60">
           All the guidelines to follow in the process of design
