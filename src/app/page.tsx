@@ -21,7 +21,7 @@ export default async function Home() {
     <div className={`flex flex-col justify-center w-screen h-screen items-center ${alumni.className}`}>
       <header className="flex bg-white w-[98vw] justify-between h-20 items-center z-1000 px-4 md:px-8">
         <Link href={"/"} className="inline-flex">
-          <Image alt="Logo" src="/Logo.png" height={60} width={80} className="md:h-20 md:w-[100px]" />
+          <Image alt="Logo" src="/Logo.png" height={60} width={80} className="md:h-18 md:w-[100px]" />
         </Link>
         <Link href={"auth/login"} className="inline-flex">
           <button className="text-white bg-gradient-to-t from-[#AB00D6] to-[#D322FF] rounded-[12px] py-2 px-4 text-lg md:text-2xl font-semibold flex items-center">
