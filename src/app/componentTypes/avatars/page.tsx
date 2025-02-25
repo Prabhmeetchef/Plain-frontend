@@ -324,11 +324,18 @@ export default function Avatars() {
                 {avatar.type === "html_css" ? (
                   <>
                     <div className="flex-1 flex w-full overflow-auto bg-[#e9e9e9] rounded-[6px] items-center justify-center">
-                      <style>{avatar.css}</style>
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: avatar.html || "",
-                        }}
+                      {/* Replace style and dangerouslySetInnerHTML with iframe */}
+                      <iframe
+                        srcDoc={`
+                          <!DOCTYPE html>
+                          <html>
+                            <head>
+                              <style>${avatar.css || ""}body {display: flex; align-items: center; justify-content: center; height: 92vh;}</style>
+                            </head>
+                            <body>${avatar.html || ""}</body>
+                          </html>
+                        `}
+                        className="w-full h-full"
                       />
                     </div>
                     <h1 className="text-lg">{avatar.title}</h1>

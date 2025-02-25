@@ -55,13 +55,10 @@ export default function Buttons() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-
     const type = formData.get("type") as string;
     const title = formData.get("title") as string;
     const notes = formData.get("notes") as string;
-
     let newButton;
-
     if (type === "html_css") {
       const html = formData.get("html") as string;
       const css = formData.get("css") as string;
@@ -72,7 +69,6 @@ export default function Buttons() {
     } else {
       return;
     }
-
     const { data: userData, error: fetchError } = await supabase
       .from("users")
       .select("buttons")
@@ -83,9 +79,7 @@ export default function Buttons() {
       console.error("Error fetching user data:", fetchError);
       return;
     }
-
     const updatedButtons = [...(userData?.buttons || []), newButton];
-
     const { error: updateError } = await supabase
       .from("users")
       .update({ buttons: updatedButtons })
@@ -95,12 +89,10 @@ export default function Buttons() {
       console.error("Error updating data:", updateError);
       return;
     }
-
     setButtons(updatedButtons);
     (document.getElementById("add-button-dialog") as HTMLDialogElement).close();
     router.refresh();
   }
-
   return (
     <div className="h-[100vh] flex justify-between items-center">
       <div className="ml-[1vw] fixed">
@@ -114,7 +106,6 @@ export default function Buttons() {
         <h2 className="opacity-60">
           All button components can be seen and created here.
         </h2>
-
         <div className="flex flex-wrap gap-8 py-10">
           <div className="flex items-center justify-center w-[300px] h-[300px]">
             {/* Add min-width to dialog */}
@@ -252,7 +243,6 @@ export default function Buttons() {
               <h1 className="translate-y-1">Add new</h1>
             </button>
           </div>
-
           {buttons.map((button, index) => (
             <div key={index}>
               <dialog id={`button-dialog-${index}`} className="rounded-lg p-6 w-[500px] min-w-[500px]">
@@ -324,11 +314,18 @@ export default function Buttons() {
                 {button.type === "html_css" ? (
                   <>
                     <div className="flex-1 flex w-full overflow-auto bg-[#e9e9e9] rounded-[6px] items-center justify-center">
-                      <style>{button.css}</style>
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: button.html || "",
-                        }}
+                      {/* Replace style and dangerouslySetInnerHTML with iframe */}
+                      <iframe
+                        srcDoc={`
+                          <!DOCTYPE html>
+                          <html>
+                            <head>
+                              <style>${button.css || ""}body {display: flex; align-items: center; justify-content: center; height: 92vh;}</style>
+                            </head>
+                            <body>${button.html || ""}</body>
+                          </html>
+                        `}
+                        className="w-full h-full"
                       />
                     </div>
                     <h1 className="text-lg">{button.title}</h1>
