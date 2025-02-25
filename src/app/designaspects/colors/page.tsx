@@ -115,7 +115,7 @@ export default function Colors() {
             >
               <form onSubmit={handleSubmit}>
                 <h1 className="text-[18px] font-semibold w-full mb-[19px]">
-                  Add color 
+                  Add color
                 </h1>
                 <div id="image_fields" className="py-4">
                   <h1 className="opacity-60 text-[13px]">
@@ -242,8 +242,11 @@ export default function Colors() {
               >
                 <div className="flex w-full bg-[#e9e9e9] rounded-[6px] items-center justify-center h-full">
                   <div
-                    className={`flex items-center justify-center rounded-[6px] w-full h-full bg-[${color.colortag}]`}
-                  >{color.colortag}</div>
+                    style={{ backgroundColor: color.colortag }}
+                    className="flex items-center justify-center rounded-[6px] w-full h-full"
+                  >
+                    {color.colortag}
+                  </div>
                 </div>
                 <h1 className="text-lg">{color.title}</h1>
               </div>

@@ -192,7 +192,7 @@ export default function Logos() {
                 id={`logo-dialog-${index}`}
                 className="rounded-lg p-6 w-[500px] min-w-[500px]"
               >
-                <h1 className="mb-[10px] text-[#AB00D6] w-[200px] font-semibold text-[20px]">
+                <h1 className="mb-[10px] text-[#AB00D6] font-semibold text-[20px] w-[200px]">
                   {logo.title}
                 </h1>
 

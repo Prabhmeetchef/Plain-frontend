@@ -183,7 +183,7 @@ export default function General() {
                 id={`general-dialog-${index}`}
                 className="rounded-lg p-6 w-[500px] min-w-[500px]"
               >
-                <h1 className="mb-[10px] text-[#AB00D6] w-[62px] font-semibold text-[20px]">
+                <h1 className="mb-[10px] text-[#AB00D6] font-semibold text-[20px] w-[200px]">
                   {general.title}
                 </h1>
                 <div className="py-4">

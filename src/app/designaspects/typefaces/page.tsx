@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Typefaces() {
-  const { data: session, status } = useSession(); // Add status to check loading state
+  const { data: session, status } = useSession();
   const username = session?.user?.name || "Guest";
   const router = useRouter();
   const supabase = createClientComponentClient();
@@ -19,6 +19,8 @@ export default function Typefaces() {
       notes?: string;
     }>
   >([]);
+  const [googleFonts, setGoogleFonts] = useState<string[]>([]);
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
   useEffect(() => {
     if (!session) return;
@@ -41,7 +43,37 @@ export default function Typefaces() {
     fetchTypefaces();
   }, [session, supabase]);
 
-  // Show loading state instead of "Please log in"
+  useEffect(() => {
+    const fetchGoogleFonts = async () => {
+      try {
+        const response = await fetch(
+          "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCV3KpoGTejtCVZQduxakAkVhESO4RaUJY"
+        );
+        const data = await response.json();
+        setGoogleFonts(data.items.map((font: { family: string }) => font.family));
+      } catch (error) {
+        console.error("Error fetching Google Fonts:", error);
+      }
+    };
+
+    fetchGoogleFonts();
+  }, []);
+
+  useEffect(() => {
+    if (typefaces.length > 0) {
+      const fontFamilies = typefaces.map((typeface) => typeface.font).join("|");
+      const link = document.createElement("link");
+      link.href = `https://fonts.googleapis.com/css?family=${fontFamilies.replace(/ /g, "+")}`;
+      link.rel = "stylesheet";
+      link.onload = () => setFontsLoaded(true);
+      document.head.appendChild(link);
+
+      return () => {
+        document.head.removeChild(link);
+      };
+    }
+  }, [typefaces]);
+
   if (status === "loading") {
     return <Loading />;
   }
@@ -89,6 +121,7 @@ export default function Typefaces() {
     ).close();
     router.refresh();
   }
+
   return (
     <div className="h-[100vh] flex justify-between items-center">
       <div className="ml-[1vw] fixed">
@@ -104,7 +137,6 @@ export default function Typefaces() {
         </h2>
         <div className="flex flex-wrap gap-8 py-10">
           <div className="flex items-center justify-center w-[300px] h-[300px]">
-            {/* Add min-width to dialog */}
             <dialog
               id="add-typeface-dialog"
               className="rounded-lg p-6 w-[500px] min-w-[500px]"
@@ -123,13 +155,18 @@ export default function Typefaces() {
                   />
                 </div>
                 <div className="py-4">
-                  <h1 className="opacity-60 text-[13px]">Font</h1>
-                  <input
-                    type="text"
+                  <h1 className="opacity-60 text-[13px]">Font (Google fonts)</h1>
+                  <select
                     name="font"
                     className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1"
                     required
-                  />
+                  >
+                    {googleFonts.map((font, index) => (
+                      <option key={index} value={font}>
+                        {font}
+                      </option>
+                    ))}
+                  </select>
                 </div>
                 <div className="py-4">
                   <h1 className="opacity-60 text-[13px]">Notes</h1>
@@ -188,7 +225,7 @@ export default function Typefaces() {
                 id={`typeface-dialog-${index}`}
                 className="rounded-lg p-6 w-[500px] min-w-[500px]"
               >
-                <h1 className="mb-[10px] text-[#AB00D6] w-[62px] font-semibold text-[20px]">
+                <h1 className="mb-[10px] text-[#AB00D6] font-semibold text-[20px] w-[200px]">
                   {typeface.title}
                 </h1>
                 <div className="py-4">
@@ -232,9 +269,18 @@ export default function Typefaces() {
                 }
               >
                 <div className="bg-[#e9e9e9] flex w-full rounded-[6px] items-center justify-center h-full text-center">
-                  <h1 className={`rounded-[6px] p-2 w-full my-1 max-w-[200px] text-[32px] font-["${typeface.font}]`}>
-                    {typeface.font}
-                  </h1>
+                  {fontsLoaded ? (
+                    <h1
+                      style={{ fontFamily: typeface.font }}
+                      className="rounded-[6px] p-2 w-full my-1 max-w-[200px] text-[32px]"
+                    >
+                      {typeface.font}
+                    </h1>
+                  ) : (
+                    <h1 className="rounded-[6px] p-2 w-full my-1 max-w-[200px] text-[32px]">
+                      Loading font...
+                    </h1>
+                  )}
                 </div>
                 <h1 className="text-lg">{typeface.title}</h1>
               </div>
