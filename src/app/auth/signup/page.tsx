@@ -65,7 +65,7 @@ export default function SignupPage() {
     <div className={`flex justify-center w-full h-full ${alumni.className}`}>
       <div className="sm:w-[50vw] flex flex-col items-center h-[100vh] w-[80vw]">
         <Link href="/">
-          <Image src="/Logo.png" alt="Logo" width={120} height={80} className="sm:pt-[65px] pt-[25px]" />
+          <Image src="/Logo.png" alt="Logo" width={120} height={80} className="sm:pt-[41px] pt-[25px]" />
         </Link>
         <h1 className="text-black text-[40px] font-bold block sm:pt-12 pt-6">Hey There!</h1>
         <h2 className="text-[#949494] text-[26px] font-semibold block">

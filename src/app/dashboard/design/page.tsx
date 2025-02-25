@@ -84,7 +84,7 @@ export default async function Designguidelines() {
         </h2>
 
         {/* Grid for displaying connected component types */}
-        <div className="flex flex-wrap gap-8 py-10">
+        <div className="flex flex-wrap gap-8 py-10 pr-6">
           {/* Add new component button */}
 
           {/* Display only components that exist in `types_c` */}

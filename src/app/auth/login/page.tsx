@@ -56,7 +56,7 @@ export default function Login() {
             alt="Logo"
             width={120}
             height={80}
-            className="sm:pt-[65px] pt-[25px]"
+            className="sm:pt-[40px] pt-[25px]"
           />
         </Link>
         <h1 className="text-black text-[40px] font-bold block pt-12">

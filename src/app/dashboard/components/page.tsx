@@ -177,7 +177,7 @@ export default async function Components() {
         </h2>
 
         {/* Grid for displaying connected component types */}
-        <div className="flex flex-wrap gap-8 sm:py-10 py-0">
+        <div className="flex flex-wrap gap-8 sm:py-10 py-0 pr-8">
           {/* Add new component button */}
           <div className="flex items-center justify-center w-[270px] h-[270px]">
             <Dialog>

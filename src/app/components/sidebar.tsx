@@ -71,7 +71,7 @@ export default function Sidebar({ username }: { username?: string }) {
             <DropdownMenuTrigger className="border-none">
               <Settings className="text-black opacity-[52%]" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="size-40">
+            <DropdownMenuContent>
               <DropdownMenuLabel className="text-[18px]">
                 Settings
               </DropdownMenuLabel>

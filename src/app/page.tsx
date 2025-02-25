@@ -19,7 +19,7 @@ export default async function Home() {
 
   return (
     <div className={`flex flex-col justify-center w-screen h-screen items-center ${alumni.className}`}>
-      <header className="flex bg-white w-[98vw] justify-between h-20 items-center z-1000 px-4 md:px-8">
+      <header className="flex bg-white w-[98vw] justify-between h-20 items-center z-1000 px-4">
         <Link href={"/"} className="inline-flex">
           <Image alt="Logo" src="/Logo.png" height={60} width={80} className="md:h-18 md:w-[100px]" />
         </Link>
@@ -37,7 +37,7 @@ export default async function Home() {
               Build, manage, and scale your design language effortlessly.
             </h2>
             <Link href={"auth/signup"}>
-              <button className="bg-white text-lg md:text-2xl font-bold px-4 md:px-6 py-2 rounded-[12px] my-4 md:my-6">
+              <button className="bg-white text-lg md:text-2xl font-bold px-4 md:px-6 py-2 rounded-[12px] my-4 md:my-10">
                 Get Started
               </button>
             </Link>
