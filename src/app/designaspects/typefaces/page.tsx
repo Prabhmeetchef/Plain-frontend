@@ -121,7 +121,7 @@ export default function Typefaces() {
     ).close();
     router.refresh();
   }
-
+ 
   return (
     <div className="h-[100vh] flex justify-between items-center">
       <div className="ml-[1vw] fixed">
