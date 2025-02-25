@@ -115,7 +115,7 @@ export default function Logos() {
             >
               <form onSubmit={handleSubmit}>
                 <h1 className="text-[18px] font-semibold w-full mb-[19px]">
-                  Add new logo component
+                  Add logo
                 </h1>
                 <div id="image_fields" className="py-4">
                   <h1 className="opacity-60 text-[13px]">Image URL</h1>

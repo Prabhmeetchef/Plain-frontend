@@ -115,7 +115,7 @@ export default function Colors() {
             >
               <form onSubmit={handleSubmit}>
                 <h1 className="text-[18px] font-semibold w-full mb-[19px]">
-                  Add new color component
+                  Add color 
                 </h1>
                 <div id="image_fields" className="py-4">
                   <h1 className="opacity-60 text-[13px]">

@@ -111,7 +111,7 @@ export default function Typefaces() {
             >
               <form onSubmit={handleSubmit}>
                 <h1 className="text-[18px] font-semibold w-full mb-[19px]">
-                  Add new typeface component
+                  Add typeface
                 </h1>
                 <div className="py-4">
                   <h1 className="opacity-60 text-[13px]">Title</h1>
