@@ -60,8 +60,7 @@ export default function General() {
     const title = formData.get("title") as string;
     const notes = formData.get("notes") as string;
 
-    let newGeneral;
-    newGeneral = { title, notes };
+    const newGeneral = { title, notes };
 
     const { data: userData, error: fetchError } = await supabase
       .from("users")

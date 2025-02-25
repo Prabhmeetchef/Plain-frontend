@@ -61,9 +61,8 @@ export default function Logos() {
     const title = formData.get("title") as string;
     const notes = formData.get("notes") as string;
 
-    let newLogo;
     const imgurl = formData.get("imgurl") as string;
-    newLogo = { title, imgurl, notes };
+    const newLogo = { title, imgurl, notes };
 
     const { data: userData, error: fetchError } = await supabase
       .from("users")

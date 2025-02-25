@@ -61,9 +61,8 @@ export default function Colors() {
     const title = formData.get("title") as string;
     const notes = formData.get("notes") as string;
 
-    let newColor;
     const colortag = formData.get("colortag") as string;
-    newColor = { title, colortag, notes };
+    const newColor = { title, colortag, notes };
 
     const { data: userData, error: fetchError } = await supabase
       .from("users")

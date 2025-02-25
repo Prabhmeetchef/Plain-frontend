@@ -62,8 +62,7 @@ export default function Typefaces() {
     const font = formData.get("font") as string;
     const notes = formData.get("notes") as string;
 
-    let newTypeface;
-    newTypeface = { title, font, notes };
+    const newTypeface = { title, font, notes };
 
     const { data: userData, error: fetchError } = await supabase
       .from("users")
