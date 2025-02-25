@@ -45,9 +45,10 @@ export default function Typefaces() {
 
   useEffect(() => {
     const fetchGoogleFonts = async () => {
+      const apiKey = process.env.NEXT_PUBLIC_GOOGLE_FONTS_API_KEY;
       try {
         const response = await fetch(
-          "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCV3KpoGTejtCVZQduxakAkVhESO4RaUJY"
+          `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`
         );
         const data = await response.json();
         setGoogleFonts(data.items.map((font: { family: string }) => font.family));
