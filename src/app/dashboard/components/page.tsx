@@ -44,6 +44,7 @@ export default async function Components() {
 
   async function handleSubmit(formData: FormData) {
     "use server"; // Ensures this runs server-side
+    // Prevent duplicate submissions by checking if formData is already processed
     const selectedType = formData.get("componentType") as string;
     if (!selectedType) return;
 
@@ -59,13 +60,21 @@ export default async function Components() {
       return;
     }
 
+    // Extract arrays or default to empty
     const types_c: string[] = data?.types_c || [];
     const types_nc: string[] = data?.types_nc || [];
 
-    // Update `types_c` and `types_nc`
+    // Prevent duplicate insertions
+    if (types_c.includes(selectedType)) {
+      console.log("Type already exists in types_c. Skipping update.");
+      return;
+    }
+
+    // Prepare updated arrays
     const updatedTypesC = [...types_c, selectedType];
     const updatedTypesNC = types_nc.filter((type) => type !== selectedType);
 
+    // Update database
     const { error: updateError } = await supabase
       .from("users")
       .update({
@@ -78,7 +87,7 @@ export default async function Components() {
       console.error("Error updating data:", updateError);
       return;
     }
-
+    
     // Reload the page after updating
     redirect("/dashboard/components");
   }
