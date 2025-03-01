@@ -148,12 +148,12 @@ export default function Inputs() {
                       <h1 className="opacity-60 text-[13px]">HTML</h1>
                       <textarea
                         name="html"
-                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1 bg-black text-green-500"
+                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1 bg-black text-green-500 min-h-32"
                       />
                       <h1 className="opacity-60 text-[13px]">CSS</h1>
                       <textarea
                         name="css"
-                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1 bg-black text-green-500"
+                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1 bg-black text-green-500 min-h-32"
                       />
                     </div>
                     <div className="flex justify-end w-full gap-6">
@@ -273,7 +273,7 @@ export default function Inputs() {
                       <textarea
                         readOnly
                         value={input.html}
-                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1"
+                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1 bg-black text-white min-h-32"
                       />
                     </div>
                     <div className="py-4">
@@ -281,7 +281,7 @@ export default function Inputs() {
                       <textarea
                         readOnly
                         value={input.css}
-                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1"
+                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1 bg-black text-white min-h-32"
                       />
                     </div>
                     <div className="py-4">
@@ -329,7 +329,7 @@ export default function Inputs() {
                 </button>
               </dialog>
               <div
-                className="flex flex-col items-center justify-center h-[320px] w-[300px] border border-[#E6E6E6] rounded-[10px] hover:shadow-[0_2px_7px_2px_rgba(0,0,0,0.1)] transition cursor-pointer p-4 gap-2"
+                className="flex flex-col items-center justify-center h-[320px] w-[460px] border border-[#E6E6E6] rounded-[10px] hover:shadow-[0_2px_7px_2px_rgba(0,0,0,0.1)] transition cursor-pointer p-4 gap-2"
                 onClick={() =>
                   (
                     document.getElementById(

@@ -156,12 +156,12 @@ export default function Avatars() {
                       <h1 className="opacity-60 text-[13px]">HTML</h1>
                       <textarea
                         name="html"
-                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1 bg-black text-green-500"
+                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1 bg-black text-green-500 min-h-32"
                       />
                       <h1 className="opacity-60 text-[13px]">CSS</h1>
                       <textarea
                         name="css"
-                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1 bg-black text-green-500"
+                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1 bg-black text-green-500 min-h-32"
                       />
                     </div>
                     <div className="flex justify-end w-full gap-6">
@@ -264,7 +264,7 @@ export default function Avatars() {
                       <textarea
                         readOnly
                         value={avatar.html}
-                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1"
+                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1 bg-black text-white min-h-32"
                       />
                     </div>
                     <div className="py-4">
@@ -272,7 +272,7 @@ export default function Avatars() {
                       <textarea
                         readOnly
                         value={avatar.css}
-                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1"
+                        className="border-[1px] border-[#E6E6E6] rounded-[6px] p-2 w-full my-1 bg-black text-white min-h-32"
                       />
                     </div>
                     <div className="py-4">
